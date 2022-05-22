@@ -11,3 +11,99 @@ body {
   margin: 0;
   padding: 0;
 }
+
+$breakpoints: (
+  // 500px
+  "sm": 31.25em,
+  // 600px
+  "sm2": 37.5em,
+  // 700px
+  "md": 43.75em,
+  // 800px
+  "md2": 50em,
+  // 850px
+  "md3": 53.125em,
+  // 960px
+  "lg": 60em,
+  // 1200px
+  "lg2": 75em,
+  // 1300px
+  "lg3": 81.25em,
+  // 1550
+  "lg4": 96.875em,
+  // 1800
+  "lg5": 112.5em,
+  "xl": 120em
+);
+
+@media (min-width: map-get($breakpoints, "sm2")) {
+  .navbar__wrapper {
+    div {
+      padding-inline: 3rem;
+    }
+  }
+}
+
+@media (min-width: map-get($breakpoints, "md")) {
+  .navbar__wrapper {
+    div {
+      padding-inline: 6rem;
+    }
+  }
+}
+
+@media (min-width: map-get($breakpoints, "md2")) {
+  .navbar__wrapper {
+    div {
+      padding-inline: 7rem;
+    }
+  }
+}
+
+@media (min-width: map-get($breakpoints, "lg")) {
+  .navbar__wrapper {
+    div {
+      padding-inline: 9rem;
+    }
+  }
+}
+
+@media (min-width: map-get($breakpoints, "lg2")) {
+  .navbar__wrapper {
+    div {
+      padding-inline: 13rem;
+    }
+  }
+}
+
+@media (min-width: map-get($breakpoints, "lg3")) {
+  .navbar__wrapper {
+    div {
+      padding-inline: 20rem;
+    }
+  }
+}
+
+@media (min-width: map-get($breakpoints, "lg4")) {
+  .navbar__wrapper {
+    div {
+      padding-inline: 25rem;
+    }
+  }
+}
+
+@media (min-width: map-get($breakpoints, "lg5")) {
+  .navbar__wrapper {
+    div {
+      padding-inline: 30rem;
+    }
+  }
+}
+
+@media (min-width: map-get($breakpoints, "xl")) {
+  .navbar__wrapper {
+    div {
+      padding-inline: 34rem;
+    }
+  }
+}

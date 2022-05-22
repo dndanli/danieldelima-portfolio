@@ -1,6 +1,6 @@
 .home__hero {
   padding-inline: 1rem;
-  color: #fafafa;
+  color: #202020;
 
   .text {
     margin-top: 0.7rem;
@@ -24,38 +24,55 @@
     }
   }
 }
+
 #greeting {
-  margin-top: 3rem;
+  margin-top: 1rem;
 }
+
 .header1 {
   font-weight: 800;
   font-size: 2.5rem;
   margin-bottom: 0.3rem;
 }
+
 .header2 {
   font-size: 1.9rem;
 }
 
 .skills__content {
-  background-color: rgb(255, 255, 255);
-
-  color: #222223;
+  background-color: rgba(31, 31, 31, 1);
+  color: #ffffff;
   padding-inline: 1rem;
   padding-block: 1rem;
   margin-top: 9rem;
+  .header1 {
+    margin-top: 1rem;
+    margin-bottom: 3rem;
+  }
+}
+
+.skills__wrapper {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
 }
 
 .projects__content {
   padding-inline: 1rem;
   padding-top: 1rem;
+  margin-bottom: 2rem;
+
+  .header1 {
+    margin-top: 1rem;
+    margin-bottom: 3rem;
+  }
 }
 
 .projects__wrapper {
-  display: grid;
-  grid-template-columns: repeat(1, 1fr);
-  place-items: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   div {
-    margin-block: 1rem;
+    margin-bottom: 1.5rem;
   }
 }
 
@@ -63,6 +80,8 @@
   position: fixed;
   min-width: 100%;
   bottom: 1%;
+  display: flex;
+  justify-content: center;
 }
 
 .contact {
@@ -92,26 +111,208 @@ $breakpoints: (
   // 500px
   "sm": 31.25em,
   // 600px
-  "s": 37.5em,
+  "sm2": 37.5em,
   // 700px
   "md": 43.75em,
   // 800px
   "md2": 50em,
+  // 850px
+  "md3": 53.125em,
   // 960px
   "lg": 60em,
   // 1200px
-  "xl": 75em
+  "lg2": 75em,
+  // 1300px
+  "lg3": 81.25em,
+  // 1550
+  "lg4": 96.875em,
+  // 1800
+  "lg5": 112.5em,
+  "xl": 120em
 );
 
-@media (min-width: map-get($breakpoints, "md")) {
-  .projects__wrapper {
-    grid-template-columns: repeat(2, 1fr);
+@media (min-width: map-get($breakpoints, "sm")) {
+  .home__hero {
+    .header1 {
+      font-size: 3rem;
+    }
+    .header2 {
+      font-size: 2.3rem;
+    }
+    .text {
+      font-size: 1.3rem;
+    }
+  }
 
-    div:nth-child(1) {
-      min-height: 40rem;
+  .skills__content,
+  .projects__content {
+    .header1 {
+      font-size: 3rem;
+    }
+  }
+  .contact {
+    h2 {
+      font-size: 3rem;
     }
 
+    h3 {
+      font-size: 1.3rem;
+    }
+    .contact__email {
+      font-size: 1.8rem;
+    }
+  }
+}
+
+@media (min-width: map-get($breakpoints, "sm2")) {
+  .home__hero {
+    .header1 {
+      font-weight: 900;
+      font-size: 3.2rem;
+    }
+    .header2 {
+      font-size: 2.8rem;
+    }
+    .text {
+      font-size: 1.5rem;
+    }
+  }
+  .contact {
+    h2 {
+      font-size: 4rem;
+      font-size: 3.2rem;
+    }
+
+    h3 {
+      font-size: 1.4rem;
+    }
+    .contact__email {
+      font-size: 2rem;
+    }
+  }
+
+  .skills__content,
+  .contact,
+  .home__hero,
+  .projects__content {
+    padding-inline: 3rem;
+  }
+}
+
+@media (min-width: map-get($breakpoints, "md")) {
+  .skills__content,
+  .contact,
+  .home__hero,
+  .projects__content {
+    padding-inline: 6rem;
+  }
+}
+
+@media (min-width: map-get($breakpoints, "md2")) {
+  .home__hero {
+    .header1 {
+      font-size: 4.2rem;
+    }
+    .header2 {
+      font-size: 3.2rem;
+    }
+    .text {
+      font-size: 1.3rem;
+    }
+  }
+
+  .projects__wrapper {
+    grid-template-columns: repeat(2, 1fr);
+    row-gap: 1rem;
     column-gap: 2rem;
     -moz-column-gap: 2rem;
+    :nth-child(3) {
+      grid-column-end: span 2;
+    }
+  }
+
+  .skills__content,
+  .contact,
+  .home__hero,
+  .projects__content {
+    padding-inline: 7rem;
+  }
+}
+
+@media (min-width: map-get($breakpoints, "md3")) {
+  .skills__wrapper {
+    grid-template-columns: repeat(2, 1fr);
+    row-gap: 1rem;
+    column-gap: 2rem;
+    -moz-column-gap: 2rem;
+  }
+  .navigation__wrapper {
+    display: none;
+  }
+}
+
+@media (min-width: map-get($breakpoints, "lg")) {
+  .skills__content,
+  .contact,
+  .home__hero,
+  .projects__content {
+    padding-inline: 9rem;
+  }
+}
+
+@media (min-width: map-get($breakpoints, "lg2")) {
+  .home__hero {
+    .header1 {
+      font-size: 5rem;
+    }
+    .header2 {
+      font-size: 4rem;
+    }
+    .text {
+      font-size: 1.4rem;
+    }
+  }
+
+  .skills__content,
+  .contact,
+  .home__hero,
+  .projects__content {
+    padding-inline: 13rem;
+  }
+}
+
+@media (min-width: map-get($breakpoints, "lg3")) {
+  .skills__content,
+  .contact,
+  .home__hero,
+  .projects__content {
+    padding-inline: 20rem;
+  }
+}
+
+@media (min-width: map-get($breakpoints, "lg4")) {
+  .skills__content,
+  .contact,
+  .home__hero,
+  .projects__content {
+    padding-inline: 25rem;
+  }
+}
+
+@media (min-width: map-get($breakpoints, "lg5")) {
+  .skills__content,
+  .contact,
+  .home__hero,
+  .projects__content {
+    padding-inline: 30rem;
+  }
+}
+
+@media (min-width: map-get($breakpoints, "xl")) {
+  .skills__content,
+  .contact,
+  .home__hero,
+  .projects__content {
+    padding-inline: 34rem;
   }
 }

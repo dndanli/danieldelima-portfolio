@@ -1,62 +1,74 @@
-.mobile__wrapper {
-  background-color: #222223;
+.wrapper {
+  background-color: rgb(31, 31, 31);
   position: fixed;
   min-width: 100%;
   z-index: 2;
-  padding-top: 0.5rem;
+  padding-block: 0.5rem;
+  padding-inline: 1rem;
   left: 0;
   top: 0;
-  padding-inline: 0.7rem;
-}
-.menu {
+
   display: flex;
   align-items: center;
 
-  .menu__icon {
+  .list {
+    display: none;
+    align-items: center;
+    list-style-type: none;
     margin-left: auto;
-    font-size: 2.5rem;
+
+    li {
+      cursor: pointer;
+      margin-left: 1rem;
+      list-style-type: none;
+
+      a {
+        font-size: 1.3rem;
+        font-weight: 600;
+        color: #fafafa;
+        text-decoration: none;
+      }
+    }
+    .socials__icon {
+      margin-top: 0.3rem;
+      color: #a1e3d8;
+    }
+  }
+  .logo {
+    font-weight: 800;
     color: #fafafa;
+    cursor: pointer;
   }
 }
 
-.list__wrapper {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
+$breakpoints: (
+  // 500px
+  "sm": 31.25em,
+  // 600px
+  "sm2": 37.5em,
+  // 700px
+  "md": 43.75em,
+  // 800px
+  "md2": 50em,
+  // 850px
+  "md3": 53.125em,
+  // 960px
+  "lg": 60em,
+  // 1200px
+  "lg2": 75em,
+  // 1300px
+  "lg3": 81.25em,
+  // 1550
+  "lg4": 96.875em,
+  // 1800
+  "lg5": 112.5em,
+  "xl": 120em
+);
 
-.mobile__navbar__list {
-  margin-top: 9rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  list-style-type: none;
-
-  li {
-    font-size: 1.7rem;
-    margin-top: 0.5rem;
-    color: #fafafa;
+@media (min-width: map-get($breakpoints, "md3")) {
+  .wrapper {
+    .list {
+      display: flex;
+    }
   }
-  a {
-    text-decoration: none;
-    color: #fafafa;
-  }
-}
-
-.socials {
-  margin-top: 2rem;
-  display: flex;
-  justify-content: center;
-  .socials__icon {
-    font-size: 2rem;
-    margin-inline: 0.9rem;
-    color: #c471f5;
-    // color: linear-gradient(to top, #c471f5 0%, #fa71cd 100%);
-  }
-}
-
-.copyright {
-  margin-top: 5rem;
-  color: #fafafa;
 }

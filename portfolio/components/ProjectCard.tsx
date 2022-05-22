@@ -1,60 +1,68 @@
 import projectCard from "../styles/projectCard.module.scss";
 import Image, { StaticImageData } from "next/image";
+import Button from "../components/Button";
+import { PropsObj } from "../interfaces/ProjectCardProps";
 
-type ProjectCardProps = {
-  projectName: string;
-  projectDescription: string;
-  projectImage: StaticImageData;
-  stack: string[];
-  //  where the project is hosted
-  projectUrl?: string;
-  //   where the project's source code is hosted
-  sourceUrl?: string;
-  videoUrl?: string;
+type CardProps = {
+  dataObject: PropsObj;
 };
 
-const ProjectCard = ({
-  projectImage,
-  projectName,
-  stack,
-  projectDescription,
-  projectUrl,
-  sourceUrl,
-  videoUrl,
-}: ProjectCardProps) => {
+const ProjectCard = (dataObject: CardProps) => {
   return (
     <div className={projectCard.container}>
-      <Image
-        src={projectImage}
-        alt={projectName}
-        className={projectCard.image}
-      />
       <div className={projectCard.content}>
-        <h2 className={projectCard.title}>{projectName}</h2>
-        <h3 className={projectCard.description}>{projectDescription}</h3>
+        <h2 style={{ color: "rgba(255, 255, 255, 0.8)" }}>
+          {dataObject.dataObject.date}
+        </h2>
+        <h2 className={projectCard.title}>
+          {dataObject.dataObject.projectName} |{" "}
+          {dataObject.dataObject.projectPurpose}
+        </h2>
+        <h3 className={projectCard.description}>
+          {dataObject.dataObject.projectDescription}
+        </h3>
 
         <div className={projectCard.stack}>
-          {stack.map((obj: any, index: number) => {
-            return <li key={index}>{obj}</li>;
+          {dataObject.dataObject.stack.map((obj: any, index: number) => {
+            return <p key={index}>{obj}</p>;
           })}
         </div>
 
         <div className={projectCard.actions}>
-          {projectUrl ? (
-            <a target="_blank" rel="noopener noreferrer" href={projectUrl}>
-              <h2 style={{ color: "#c471f5" }}>View it live</h2>
+          {dataObject.dataObject.projectUrl ? (
+            <a
+              target="_blank"
+              rel="noopener noreferrer"
+              href={dataObject.dataObject.projectUrl}
+            >
+              <Button text="View" external={false} />
             </a>
           ) : null}
-          {videoUrl ? (
-            <a target="_blank" rel="noopener noreferrer" href={videoUrl}>
-              <h2 style={{ color: "#c471f5" }}>Video</h2>
+          {dataObject.dataObject.videoUrl ? (
+            <a
+              target="_blank"
+              rel="noopener noreferrer"
+              href={dataObject.dataObject.videoUrl}
+            >
+              <Button text="Video" external={false} />
             </a>
           ) : null}
-          {sourceUrl ? (
-            <a target="_blank" rel="noopener noreferrer" href={sourceUrl}>
-              <h2 style={{ color: "#c471f5" }}>Source code</h2>
+          {dataObject.dataObject.sourceUrl ? (
+            <a
+              target="_blank"
+              rel="noopener noreferrer"
+              href={dataObject.dataObject.sourceUrl}
+            >
+              <Button text="Code" external={false} />
             </a>
           ) : null}
+        </div>
+        <div className={projectCard.image__wrapper}>
+          <Image
+            src={dataObject.dataObject.projectImage}
+            alt={dataObject.dataObject.projectName}
+            style={{ borderRadius: "10px" }}
+          />
         </div>
       </div>
     </div>

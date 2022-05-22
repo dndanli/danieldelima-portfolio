@@ -1,15 +1,16 @@
 import navigation from "../../styles/navigation.module.scss";
 import Scroll from "react-scroll";
+import Link from "next/link";
 
 const Navigation = () => {
   return (
     <div className={navigation.container}>
       <ul>
-        <Scroll.Link to="home" smooth={true} offset={-50} duration={500}>
-          <h3>Home</h3>
+        <Scroll.Link to="top" smooth={true} offset={-50} duration={500}>
+          <h3>Top</h3>
         </Scroll.Link>
 
-        <Scroll.Link to="skills" smooth={true} offset={-50} duration={500}>
+        <Scroll.Link to="skills" smooth={true} offset={-45} duration={500}>
           <h3>Skills</h3>
         </Scroll.Link>
 
