@@ -9,10 +9,15 @@
   flex-direction: column;
   position: relative;
 }
+.date {
+  font-size: 1.7rem;
+  color: rgba(255, 255, 255, 0.8);
+}
 
 .image__wrapper {
   display: flex;
   align-items: center;
+  justify-content: center;
 }
 
 .content {
@@ -57,7 +62,6 @@
     color: #3b3b3d;
   }
 }
-
 $breakpoints: (
   // 500px
   "sm": 31.25em,
@@ -72,7 +76,14 @@ $breakpoints: (
   // 1200px
   "lg2": 75em,
   // 1300px
-  "lg3": 81.25em
+  "lg3": 81.25em,
+  // 1550
+  "lg4": 96.875em,
+  // 1800
+  "lg5": 112.5em,
+  "xl": 120em,
+  // 2000px
+  "xl2": 125em
 );
 
 @media (min-width: map-get($breakpoints, "md")) {
@@ -80,6 +91,23 @@ $breakpoints: (
     // flex-direction: row;
     .image {
       width: 10rem;
+    }
+  }
+}
+
+@media (min-width: map-get($breakpoints, "xl2")) {
+  .date {
+    font-size: 2.2rem;
+  }
+  .title {
+    font-size: 2.5rem;
+  }
+  .description {
+    font-size: 1.7rem;
+  }
+  .stack {
+    p {
+      font-size: 1.7rem;
     }
   }
 }

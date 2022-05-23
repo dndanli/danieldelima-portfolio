@@ -1,5 +1,6 @@
 .wrapper {
-  background-color: rgb(31, 31, 31);
+  background-color: #ffffff;
+  border-bottom: 1px solid rgb(216, 215, 215);
   position: fixed;
   min-width: 100%;
   z-index: 2;
@@ -21,22 +22,26 @@
       cursor: pointer;
       margin-left: 1rem;
       list-style-type: none;
+      :hover {
+        transition: 500ms all ease;
+        color: #e60067;
+      }
 
       a {
         font-size: 1.3rem;
         font-weight: 600;
-        color: #fafafa;
+        color: rgb(31, 31, 31);
         text-decoration: none;
       }
     }
     .socials__icon {
       margin-top: 0.3rem;
-      color: #a1e3d8;
+      color: rgb(31, 31, 31);
     }
   }
   .logo {
     font-weight: 800;
-    color: #fafafa;
+    color: #e60067;
     cursor: pointer;
   }
 }
@@ -62,7 +67,9 @@ $breakpoints: (
   "lg4": 96.875em,
   // 1800
   "lg5": 112.5em,
-  "xl": 120em
+  "xl": 120em,
+  // 2000px
+  "xl2": 125em
 );
 
 @media (min-width: map-get($breakpoints, "md3")) {
@@ -70,5 +77,21 @@ $breakpoints: (
     .list {
       display: flex;
     }
+  }
+}
+
+@media (min-width: map-get($breakpoints, "xl2")) {
+  .wrapper {
+    .list {
+      li {
+        margin-left: 1.5rem;
+        a {
+          font-size: 1.9rem;
+        }
+      }
+    }
+  }
+  .logo {
+    font-size: 1.9rem;
   }
 }

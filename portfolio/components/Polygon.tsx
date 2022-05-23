@@ -1,7 +1,7 @@
 import polygon from "../styles/polygon.module.scss";
 
 const Polygon = () => {
-  const color: string = "#fafafa";
+  const color: string = "#ffffff";
 
   return (
     <div className={polygon.shape__container}>
@@ -14,7 +14,7 @@ const Polygon = () => {
       >
         <path
           d="M113.903 5.24945C119.883 1.97848 127.117 1.97848 133.097 5.24945L220.052 52.8102C226.465 56.3183 230.454 63.0464 230.454 70.357V163.643C230.454 170.954 226.465 177.682 220.052 181.19L133.097 228.751C127.117 232.022 119.883 232.022 113.903 228.751L26.9484 181.19C20.5346 177.682 16.5459 170.954 16.5459 163.643V70.3569C16.5459 63.0464 20.5346 56.3183 26.9484 52.8102L113.903 5.24945Z"
-          fill="#c471f5"
+          fill="#2355d8"
           className={polygon.shape__container}
         />
         <path

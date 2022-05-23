@@ -17,7 +17,9 @@ $breakpoints: (
   "lg4": 96.875em,
   // 1800
   "lg5": 112.5em,
-  "xl": 120em
+  "xl": 120em,
+  // 2000px
+  "xl2": 125em
 );
 
 @media (min-width: map-get($breakpoints, "sm2")) {
@@ -25,6 +27,15 @@ $breakpoints: (
     svg {
       width: 350px;
       height: 350px;
+    }
+  }
+}
+
+@media (min-width: map-get($breakpoints, "xl2")) {
+  .shape__container {
+    svg {
+      width: 450px;
+      height: 450px;
     }
   }
 }

@@ -1,10 +1,12 @@
 .container {
-  background-color: #cfd9df;
-  background-image: linear-gradient(to top, #cfd9df 0%, #e2ebf0 100%);
-  color: rgba(31, 31, 31, 0.9);
-  margin-bottom: 1rem;
+  background-color: #ffffff;
+  color: #2355d8;
+  border: 1px solid rgb(213, 213, 213);
   border-radius: 8px;
   padding: 0.5rem;
+  .type {
+    color: rgb(31, 31, 31);
+  }
 }
 
 .skills__list {
@@ -23,5 +25,43 @@
     font-weight: 500;
     display: flex;
     align-items: center;
+  }
+}
+
+$breakpoints: (
+  // 500px
+  "sm": 31.25em,
+  // 600px
+  "sm2": 37.5em,
+  // 700px
+  "md": 43.75em,
+  // 800px
+  "md2": 50em,
+  // 960px
+  "lg": 60em,
+  // 1200px
+  "lg2": 75em,
+  // 1300px
+  "lg3": 81.25em,
+  // 1550
+  "lg4": 96.875em,
+  // 1800
+  "lg5": 112.5em,
+  "xl": 120em,
+  // 2000px
+  "xl2": 125em
+);
+
+@media (min-width: map-get($breakpoints, "xl2")) {
+  .container {
+    padding: 1rem;
+    .type {
+      font-size: 2rem;
+    }
+  }
+  .skills__list {
+    li {
+      font-size: 1.8rem;
+    }
   }
 }

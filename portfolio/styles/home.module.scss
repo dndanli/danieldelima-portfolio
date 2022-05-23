@@ -40,11 +40,11 @@
 }
 
 .skills__content {
-  background-color: rgba(31, 31, 31, 1);
-  color: #ffffff;
+  color: rgba(31, 31, 31, 1);
   padding-inline: 1rem;
-  padding-block: 1rem;
-  margin-top: 9rem;
+  padding-top: 1rem;
+  padding-bottom: 2.5rem;
+  margin-top: 10rem;
   .header1 {
     margin-top: 1rem;
     margin-bottom: 3rem;
@@ -54,9 +54,11 @@
 .skills__wrapper {
   display: grid;
   grid-template-columns: repeat(1, 1fr);
+  row-gap: 1.5rem;
 }
 
 .projects__content {
+  color: rgba(31, 31, 31, 1);
   padding-inline: 1rem;
   padding-top: 1rem;
   margin-bottom: 2rem;
@@ -85,11 +87,11 @@
 }
 
 .contact {
-  background-color: rgb(255, 255, 255);
-  color: #222223;
+  background-color: #0f1221;
+  color: #ffffff;
   padding-inline: 1rem;
   padding-top: 0.3rem;
-  padding-bottom: 5rem;
+  padding-bottom: 10rem;
 
   h2 {
     margin-block: 1rem;
@@ -128,7 +130,9 @@ $breakpoints: (
   "lg4": 96.875em,
   // 1800
   "lg5": 112.5em,
-  "xl": 120em
+  "xl": 120em,
+  // 2000px
+  "xl2": 125em
 );
 
 @media (min-width: map-get($breakpoints, "sm")) {
@@ -242,7 +246,7 @@ $breakpoints: (
 @media (min-width: map-get($breakpoints, "md3")) {
   .skills__wrapper {
     grid-template-columns: repeat(2, 1fr);
-    row-gap: 1rem;
+    row-gap: 2rem;
     column-gap: 2rem;
     -moz-column-gap: 2rem;
   }
@@ -314,5 +318,41 @@ $breakpoints: (
   .home__hero,
   .projects__content {
     padding-inline: 34rem;
+  }
+}
+
+@media (min-width: map-get($breakpoints, "xl2")) {
+  .home__hero {
+    .header1 {
+      font-size: 7rem;
+    }
+    .header2 {
+      font-size: 5rem;
+    }
+    .text {
+      font-size: 2rem;
+    }
+  }
+  .skills__content {
+    margin-top: 12rem;
+  }
+
+  .skills__content,
+  .projects__content {
+    .header1 {
+      font-size: 4.5rem;
+    }
+  }
+  .contact {
+    h2 {
+      font-size: 6rem;
+    }
+
+    h3 {
+      font-size: 1.8em;
+    }
+    .contact__email {
+      font-size: 2.5rem;
+    }
   }
 }

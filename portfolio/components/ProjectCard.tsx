@@ -11,9 +11,7 @@ const ProjectCard = (dataObject: CardProps) => {
   return (
     <div className={projectCard.container}>
       <div className={projectCard.content}>
-        <h2 style={{ color: "rgba(255, 255, 255, 0.8)" }}>
-          {dataObject.dataObject.date}
-        </h2>
+        <h2 className={projectCard.date}>{dataObject.dataObject.date}</h2>
         <h2 className={projectCard.title}>
           {dataObject.dataObject.projectName} |{" "}
           {dataObject.dataObject.projectPurpose}

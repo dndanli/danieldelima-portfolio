@@ -1,6 +1,5 @@
 .button {
-  background-color: #c471f5;
-  // background-image: linear-gradient(to top, #c471f5 0%, #fa71cd 100%);
+  background-color: #2355d8;
   cursor: pointer;
   color: #fafafa;
   padding-block: 1rem;
@@ -14,5 +13,38 @@
   p {
     font-size: 1.2rem;
     font-weight: 600;
+  }
+}
+
+$breakpoints: (
+  // 500px
+  "sm": 31.25em,
+  // 600px
+  "sm2": 37.5em,
+  // 700px
+  "md": 43.75em,
+  // 800px
+  "md2": 50em,
+  // 960px
+  "lg": 60em,
+  // 1200px
+  "lg2": 75em,
+  // 1300px
+  "lg3": 81.25em,
+  // 1550
+  "lg4": 96.875em,
+  // 1800
+  "lg5": 112.5em,
+  "xl": 120em,
+  // 2000px
+  "xl2": 125em
+);
+
+@media (min-width: map-get($breakpoints, "xl2")) {
+  .button {
+    p {
+      font-size: 2rem;
+    }
+    max-width: 15rem;
   }
 }
